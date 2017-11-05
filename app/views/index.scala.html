@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>index</title>
+    <link rel="stylesheet" media="screen" href=@routes.Assets.versioned( "stylesheets/main.css")>
+    <link rel="stylesheet" media="screen" href=@routes.Assets.versioned( "vendor/bootstrap/css/bootstrap.min.css")>
+    <link rel="stylesheet" media="screen" href=@routes.Assets.versioned( "vendor/datatables-plugins/dataTables.bootstrap.css")>
+    <link rel="stylesheet" media="screen" href=@routes.Assets.versioned( "vendor/datatables-responsive/dataTables.responsive.css")>
+    <link rel="shortcut icon" type="image/png" href=@routes.Assets.versioned( "images/favicon.png")>
+    <script src=@routes.Assets.versioned( "javascripts/jquery.min.js") type="text/javascript"></script>
+    <script src=@routes.Assets.versioned( "vendor/bootstrap/js/bootstrap.min.js") type="text/javascript"></script>
+    <script src=@routes.Assets.versioned( "vendor/datatables/js/jquery.dataTables.min.js") type="text/javascript"></script>
+    <script src=@routes.Assets.versioned( "vendor/datatables-plugins/dataTables.bootstrap.min.js") type="text/javascript"></script>
+    <script src=@routes.Assets.versioned( "vendor/datatables-responsive/dataTables.responsive.js") type="text/javascript"></script>
+    <script src=@routes.Assets.versioned( "javascripts/hello.js") type="text/javascript"></script>
+    <style>
+        .borderless {
+            margin: 0px;
+        }
+        
+        .borderless td,
+        .borderless th {
+            border: 0px !important;
+            vertical-align: middle!important;
+        }
+        
+        .overflow_div {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden
+        }
+        
+        .div_item_example{
+            display:none;
+        }
+        
+        .div_item .div_item_content {
+            border: 1px solid;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .div_item .div_item_content:hover {
+            border: 2px solid red;
+            background:blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> index </h1>
+    <div class='row' style="width:100%">
+        <div class='col-lg-1 col-md-2 overflow_div'>
+            <div style='display:inline'>1111111111</div>
+            <div style='display:inline'> </div>
+            <div style='display:inline'>222222222</div>
+        </div>
+    </div>
+    <div class='row' style="width:100%">
+        <div class='col-lg-10'>
+            <div id='my_content'>
+                <div class='div_item_example'>
+                    <div class='div_item_content'>
+                        <table class="table borderless" style="table-layout:fixed;" id='my_table'>
+                            <colgroup>
+                                <col style="width:15%">
+                                    <col style="width:50%">
+                                        <col style="width:15%">
+                                            <col style="width:15%">
+                            </colgroup>
+                            <tbody>
+                                <tr id='item_tr'>
+                                    <td>1
+                                        <br>2
+                                        <br>3</td>
+                                    <td id='div_item_name'>Markaaaaaaaaaaaaaaaaaa</td>
+                                    <td style="border-left:1px solid !important">
+                                        <div class='overflow_div'> 2222222222222222222222222222 </div>
+                                    </td>
+                                    <td style="border-left:1px solid !important">
+                                        <div class="overflow_div">mdoccccccccccccccccccccccccc</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h5> </h5> </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var newItem = $('.div_item_example').clone(true);
+        newItem.removeClass('div_item_example');
+        newItem.addClass('div_item');
+        newItem.css('display','block');
+        newItem.find('#div_item_name').text('qqqqqq');
+        $('#my_content').append(newItem);
+        
+        newItem = $('.div_item_example').clone(true);
+        newItem.removeClass('div_item_example');
+        newItem.addClass('div_item');
+        newItem.css('display','block');
+        newItem.find('#div_item_name').text('zzzzz');
+         $('#my_content').append(newItem);
+    </script>
+</body>
+
+</html>

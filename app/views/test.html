@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
+<script>
+console.log("1111");
+var text1 = '{"BAD_REQUEST":"12345"}';
+console.log("text1:"+text1+" type:"+typeof(text1));
+var jsonData = $.parseJSON(text1);
+console.log(" jsonData type:"+typeof(jsonData));
+console.log("BAD_REQUEST:"+jsonData.BAD_REQUEST);
+console.log("BAD_REQUEST:"+jsonData["BAD_REQUEST"]);
+for(var key in jsonData){
+	console.log("key:"+key)
+
+	console.log(key+" "+jsonData[key])
+
+	}
+</script>
+    </head>
+    <body>
+
+    </body>
+</html>
